@@ -1,137 +1,149 @@
 ## **Plan du Contenu :**
 
 * **[Qu’est-ce qu’un système embarqué ?](#1-quest-ce-quun-système-embarqué-)**
-* **[Pourquoi le langage C en embarqué ?](#2-pourquoi-le-langage-c-en-embarqué-)**
-* **[Types de données utiles en embarqué](#3-types-de-données-utiles-en-embarqué)**
+* **[Pourquoi le langage C sur PIC18F ?](#2-pourquoi-le-langage-c-sur-pic18f-)**
+* **[Types de données utiles sur PIC18F](#3-types-de-données-utiles-sur-pic18f)**
 * **[Manipulation des registres et bits](#4-manipulation-des-registres-et-bits)**
-* **[Pointeurs et mémoire](#5-pointeurs-et-mémoire)**
-* **[Structure d’un programme C embarqué](#6-structure-dun-programme-c-embarqué)**
+* **[Pointeurs et mémoire du PIC18F](#5-pointeurs-et-mémoire-du-pic18f)**
+* **[Structure d’un programme C sur MPLAB XC8](#6-structure-dun-programme-c-sur-mplab-xc8)**
 * **[Entrées/Sorties (GPIO)](#7-entréessorties-gpio)**
 * **[Timers et interruptions](#8-timers-et-interruptions)**
 * **[Communication série (UART, SPI, I2C)](#9-communication-série-uart-spi-i2c)**
-* **[Bonnes pratiques en embarqué](#10-bonnes-pratiques-en-embarqué)**
+* **[Bonnes pratiques sur PIC18F](#10-bonnes-pratiques-sur-pic18f)**
 
 ---
 
-<h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en Language C</a></h3>
+<h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en Langage C</a></h3>
 
 ---
 
 ## **1. Qu’est-ce qu’un système embarqué ?**
 
-* C’est un **mini-ordinateur intégré** dans un appareil (smartphone, voiture, montre connectée, robot).
-* Contraintes : **peu de mémoire, consommation réduite, temps réel**.
-* Pas de système d’exploitation complet (souvent pas de Linux/Windows).
+* C’est un **système électronique autonome** exécutant un programme dédié à une tâche spécifique.
+* Il fonctionne avec des **ressources limitées** : mémoire, énergie, puissance.
+* Il doit souvent réagir **en temps réel**.
+* Le **PIC18F** est un microcontrôleur typique utilisé dans ces systèmes.
 
 ---
 
-## **2. Pourquoi le langage C en embarqué ?**
+## **2. Pourquoi le langage C sur PIC18F ?**
 
-* Langage **rapide** (proche du matériel).
-* Permet d’accéder **directement aux registres** du microcontrôleur.
-* Portable (un même code peut s’adapter à plusieurs architectures).
-* Utilisé dans presque **tous les microcontrôleurs** (ARM STM32, AVR Arduino, PIC, etc.).
+* Langage **rapide** et **efficace** pour le bas niveau.
+* Permet d’accéder directement aux **registres matériels**.
+* Compatible avec le compilateur **MPLAB XC8**.
+* Utilisé pour configurer et piloter les **périphériques internes** (GPIO, timers, UART, etc.).
+
+```c
+#include <xc.h>        // Bibliothèque principale Microchip
+#define _XTAL_FREQ 8000000   // Définir la fréquence du quartz
+```
 
 ---
 
-## **3. Types de données utiles en embarqué**
+## **3. Types de données utiles sur PIC18F**
 
-👉 Utiliser des tailles **fixes** (bibliothèque `<stdint.h>`).
+👉 Utiliser des **tailles fixes** (bibliothèque `<stdint.h>`) pour maîtriser la mémoire.
 
-| Type       | Taille  | Exemple d’usage                     |
-| ---------- | ------- | ----------------------------------- |
-| `uint8_t`  | 8 bits  | lecture d’un GPIO                   |
-| `uint16_t` | 16 bits | valeur d’un Timer                   |
-| `uint32_t` | 32 bits | registres principaux                |
-| `volatile` | —       | variable matérielle (non optimisée) |
+| Type       | Taille  | Exemple d’usage                   |
+| ---------- | ------- | --------------------------------- |
+| `uint8_t`  | 8 bits  | Lecture d’un port GPIO            |
+| `uint16_t` | 16 bits | Valeur d’un Timer                 |
+| `uint32_t` | 32 bits | Compteur logiciel                 |
+| `volatile` | —       | Variable modifiée par le matériel |
+
+```c
+volatile uint8_t bouton;     // variable modifiée par interruption
+uint16_t compteurTemps;      // compteur local
+```
 
 ---
 
 ## **4. Manipulation des registres et bits**
 
-En embarqué, on doit activer/désactiver des **bits** spécifiques dans des registres.
+Chaque périphérique du PIC18F est contrôlé par des **registres** :
 
-* Mettre un bit :
+* `TRISx` → définit la direction (entrée/sortie).
+* `PORTx` → lit les niveaux logiques.
+* `LATx`  → écrit sur les sorties.
 
-```c
-REG |= (1 << n);
-```
-
-* Effacer un bit :
+### 🧩 Opérations sur les bits
 
 ```c
-REG &= ~(1 << n);
-```
-
-* Inverser un bit :
-
-```c
-REG ^= (1 << n);
-```
-
-* Tester un bit :
-
-```c
-if (REG & (1 << n)) { ... }
+REG |= (1 << n);   // Met le bit n à 1
+REG &= ~(1 << n);  // Met le bit n à 0
+REG ^= (1 << n);   // Inverse le bit n
+if (REG & (1 << n)) { ... } // Teste le bit n
 ```
 
 ---
 
-## **5. Pointeurs et mémoire**
+## **5. Pointeurs et mémoire du PIC18F**
 
-* Chaque périphérique est représenté par une **adresse mémoire**.
-* On y accède avec des **pointeurs** :
+Le PIC18F contient plusieurs zones mémoire :
+
+* **Programme (Flash)** → contient le code C compilé.
+* **RAM (Données)** → variables temporaires.
+* **EEPROM** → données conservées après coupure d’alimentation.
+
+Les périphériques sont mappés en mémoire, accessibles via des **pointeurs volatiles**.
 
 ```c
-#define REGISTRE (*(volatile uint32_t*)ADRESSE)
+#define REGISTRE (*(volatile uint8_t*)0xF80)
 ```
-
-* `volatile` = indispensable pour dire au compilateur que la valeur peut changer à tout moment (ex. interruption, capteur).
 
 ---
 
-## **6. Structure d’un programme C embarqué**
+## **6. Structure d’un programme C sur MPLAB XC8**
 
-Un programme embarqué suit toujours le même schéma :
+Le programme suit une structure fixe :
+initialisation → boucle infinie → interruptions éventuelles.
 
 ```c
-#include "microcontroller.h"
+#include <xc.h>
+#define _XTAL_FREQ 8000000
 
-int main(void) {
-    initialisation();   // horloge, GPIO, UART...
+void main(void) {
+    initialisation();     // Configuration GPIO, Timer, UART...
+    
     while(1) {
-        // Boucle infinie
+        // Programme principal (boucle infinie)
     }
 }
 ```
 
-⚠️ La fonction `main()` **ne doit jamais se terminer**, car le programme doit tourner en continu.
+⚠️ `main()` ne se termine jamais : le microcontrôleur fonctionne en continu.
 
 ---
 
 ## **7. Entrées/Sorties (GPIO)**
 
-* **GPIO = General Purpose Input/Output**.
-* Permet d’allumer une LED, lire un bouton, contrôler un capteur.
-* Configuration typique :
+* **GPIO = General Purpose Input/Output**
+* Sert à lire des capteurs ou commander des LED, moteurs, relais...
+
+| Registre | Fonction                           |
+| -------- | ---------------------------------- |
+| `TRISx`  | Direction (1 = entrée, 0 = sortie) |
+| `PORTx`  | Lecture des broches                |
+| `LATx`   | Écriture sur les sorties           |
 
 ```c
-GPIO->DIR = ... ;   // Direction (entrée ou sortie)
-GPIO->ODR = ... ;   // Écriture
-GPIO->IDR = ... ;   // Lecture
+TRISBbits.TRISB0 = 0;  // RB0 en sortie
+LATBbits.LATB0 = 1;    // Allumer la LED RB0
 ```
 
 ---
 
 ## **8. Timers et interruptions**
 
-* Les **timers** créent des délais précis ou des signaux (PWM).
-* Les **interruptions (ISR)** permettent de réagir à un événement externe (bouton, capteur).
-  Syntaxe générique :
+* Les **timers** servent à mesurer le temps ou générer des signaux périodiques (PWM).
+* Les **interruptions** permettent d’exécuter un code automatiquement lors d’un événement (timer, bouton, UART...).
 
 ```c
-void NOM_IRQHandler(void) {
-    // Code exécuté quand l’interruption se déclenche
+void __interrupt() ISR(void) {
+    if (INTCONbits.TMR0IF) {
+        // Action lors du déclenchement du timer
+        INTCONbits.TMR0IF = 0; // Réinitialiser le drapeau
+    }
 }
 ```
 
@@ -139,27 +151,26 @@ void NOM_IRQHandler(void) {
 
 ## **9. Communication série (UART, SPI, I2C)**
 
-* **UART** : communication simple TX/RX (ex. liaison PC ↔ microcontrôleur).
-* **I2C** : bus à 2 fils maître-esclave (capteurs, mémoire).
-* **SPI** : communication rapide maître-esclave (écrans, mémoire Flash).
-
-Syntaxe générale :
+* **UART** → communication série simple (TX/RX) avec PC.
+* **SPI** → transfert rapide de données avec plusieurs périphériques.
+* **I2C** → bus à 2 fils pour relier plusieurs composants.
 
 ```c
-UART->DR = donnée;    // Envoi UART
-SPI->DR = donnée;     // Envoi SPI
-I2C->DR = donnée;     // Envoi I2C
+// Exemple générique
+TXREG = data;    // Envoi UART
+SSPBUF = data;   // Envoi SPI
 ```
 
 ---
 
-## **10. Bonnes pratiques en embarqué**
+## **10. Bonnes pratiques sur PIC18F**
 
-* Toujours utiliser `volatile` pour registres et variables liées au matériel.
-* Éviter l’utilisation de `malloc/free` (risque de fragmentation mémoire).
-* Privilégier des **fonctions courtes** et optimisées.
-* Organiser le projet en **fichiers `.h` et `.c`** pour séparer déclaration et implémentation.
-* Toujours vérifier les **datasheets** du microcontrôleur (chaque registre est documenté).
+* Toujours utiliser `volatile` pour les variables matérielles.
+* Définir correctement `_XTAL_FREQ` avant les fonctions de délai.
+* Éviter `malloc` / `free` → risque de fragmentation mémoire.
+* Organiser le projet en fichiers `.h` et `.c`.
+* Lire attentivement la **datasheet du PIC18F** avant toute configuration.
+* Tester chaque module individuellement avant intégration finale.
 
 ---
 
