@@ -2,7 +2,7 @@
 Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numérique** en une **Tension Analogique** proportionnelle, définie par des Tensions de Référence, avec un Nombre Fini de Niveaux (**32** pour un CNA **`5-bits`**).
 
 
-- ### Étapes de Conversion N/A
+- ## Étapes de Conversion N/A
    | **Étape** | **Action**                                  | **Description**                                                                                                         |
    | --------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
    | **1**     | **Source de Référence Positive** | Sélection de $`V_{SRC+}`$ :<br>• **VDD**<br>• **VREF+ Externe**<br>• **FVR BUF1**                                         |
@@ -12,9 +12,9 @@ Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numéri
    | **5**     | **Destination de la Sortie**     | • Entrée Positive d’un **Comparateur**<br>• Module **CAN (ADC)**<br>• Broche **DACOUT (RA2)** |
 
 
-- ### Registres de Contrôle
+- ## Registres de Contrôle
 
-   - #### `VREFCON1` – Contrôle de la Référence de Tension (CNA)
+   - ### `VREFCON1` – Contrôle de la Référence de Tension (CNA)
       <table>
        <thead>
          <tr align="center">
@@ -66,7 +66,7 @@ Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numéri
          - **`0`** = **VSS**
          - **`1`** = **VREF−**
 
-   - #### `VREFCON2` – Contrôle de la Référence de Tension (Valeur de Sortie CNA)
+   - ### `VREFCON2` – Contrôle de la Référence de Tension (Valeur de Sortie CNA)
       <table>
        <thead>
          <tr align="center">
@@ -97,7 +97,7 @@ Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numéri
            > **$`V_{OUT} = \left(\dfrac{V_{SRC+} - V_{SRC-}}{2^5}\right) \times DACR<4:0> + V_{SRC-}`$**
 
 
-- ### Registres Associés
+- ## Registres Associés
 
    <table>
        <thead>

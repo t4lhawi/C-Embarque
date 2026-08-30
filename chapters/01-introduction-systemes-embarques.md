@@ -6,7 +6,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 ![embededd](https://github.com/user-attachments/assets/f6afe0d5-a655-4da9-972d-964ff238b188)
 
 
-- ### **Architecture Générale**
+- ## **Architecture Générale**
    - **Microcontrôleur / Microprocesseur :**
       - Unité centrale d’exécution (CPU)
       - Utilise mémoire **RAM**, **Flash**, **EEPROM**
@@ -26,7 +26,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
       - **Actionneurs :** moteurs, relais, écrans, LEDs…
 
 
-- ### **Caractéristiques d’un Système Embarqué**
+- ## **Caractéristiques d’un Système Embarqué**
 
    * **Temps réel** : respecter des délais stricts
    * **Contraintes de ressources** : mémoire limitée, faible consommation
@@ -35,7 +35,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
    * **Autonomie** : batterie, capteurs intégrés
 
 
-- ### **Cycle de Développement**
+- ## **Cycle de Développement**
 
    - **Analyse du besoin**
    - **Conception (hardware + software)**
@@ -45,7 +45,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
    - **Maintenance / mises à jour**
 
 
-- ### **Domaines d’Application**
+- ## **Domaines d’Application**
 
    * Automobile (ESP, ABS, ECU)
    * Aéronautique

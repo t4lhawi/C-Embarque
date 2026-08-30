@@ -1,6 +1,6 @@
 # **2. Manipulation des Bits**
 
-- ### Représentation Binaire d’un Octet (`char`)
+- ## Représentation Binaire d’un Octet (`char`)
    Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
    <table>
      <thead>
@@ -27,7 +27,7 @@
    > - `LSB` : bit de poids Faible
    > - `MSB` : bit de poids Fort
 
-- ### **Opérations Bit à Bit (Bitwise)**
+- ## **Opérations Bit à Bit (Bitwise)**
 
    | Opération          | Symbole | Code             | Description                                                                 |
    | ------------------ | ------- | ---------------- | --------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@
    | **NOT (négation)** | `~`     | `a = ~x`         | Inverse tous les bits (0→1, 1→0).                                           |
 
 
-- ### **Opérations Courantes sur un Bit Précis**
+- ## **Opérations Courantes sur un Bit Précis**
 
    | Opération                        | Code                        | Description                       |
    | -------------------------------- | --------------------------- | --------------------------------- |
@@ -52,7 +52,7 @@
 
 
 
-- ### **Décalages de Bits**
+- ## **Décalages de Bits**
 
    | Opération             | Symbole | Code     | Description                                                                          |
    | --------------------- | ------- | -------- | ------------------------------------------------------------------------------------ |
@@ -61,7 +61,7 @@
 
 
 
-- ### **Rotations de Bits**
+- ## **Rotations de Bits**
 
    | Opération             | Code                         | Description                                                            |
    | --------------------- | ---------------------------- | ---------------------------------------------------------------------- |
@@ -71,7 +71,7 @@
    > - Les rotations conservent tous les bits, contrairement aux décalages.
    > - Pour un `char`, on considère **8 bits** (adapter 8 selon la taille du type).
 
-- ### **Masques de Bits (Bit Masks)**
+- ## **Masques de Bits (Bit Masks)**
 
    | Opération                          | Code             | Description                           |
    | ---------------------------------- | ---------------- | ------------------------------------- |

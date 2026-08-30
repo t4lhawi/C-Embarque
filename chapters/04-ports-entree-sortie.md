@@ -1,6 +1,6 @@
 # **4. Ports d’Entrée/Sortie (E/S)**
 
-- ### Registres de Contrôle
+- ## Registres de Contrôle
 
    | Registre    | Fonction                                             | Configuration                                    |
    | ----------- | ---------------------------------------------------- | ------------------------------------------------ |
@@ -16,7 +16,7 @@
    > - Manipulation des Sorties **Toujours via `LATx`**
 
 
-- ### Registres Associés au PORTA
+- ## Registres Associés au PORTA
 
    <table>
      <thead>
@@ -165,7 +165,7 @@
    > - — = emplacements non implémentés, lus comme ‘0’.
    > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
 
-- ### Registres Associés au PORTB
+- ## Registres Associés au PORTB
 
    <table>
      <thead>
@@ -356,7 +356,7 @@
 
 
 
-- ### Registres Associés au PORTC
+- ## Registres Associés au PORTC
 
    <table>
      <thead>
@@ -539,7 +539,7 @@
    > - Les **bits grisés ne sont pas utilisés pour PORTC**.
    > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
 
-- ### Registres Associés au PORTD
+- ## Registres Associés au PORTD
 
    <table>
      <thead>
@@ -668,7 +668,7 @@
    > - — = **emplacements non implémentés, lus comme ‘0’**.
    > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
 
-- ### Registres Associés au PORTE
+- ## Registres Associés au PORTE
 
    <table>
      <thead>

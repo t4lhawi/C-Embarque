@@ -2,7 +2,7 @@
 Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
 
 
-- ### **Architecture du Microcontrôleur PIC18F45K22**
+- ## **Architecture du Microcontrôleur PIC18F45K22**
    ![arch_pic](https://github.com/user-attachments/assets/7c2701f0-caba-4d97-b3a2-a83eb048764c)
 
    
@@ -28,7 +28,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
   > - Convertisseur **ADC 10 ou 12 bits** selon modèle
 
 
-- ### **Pins du Microcontrôleur PIC18F45K22**
+- ## **Pins du Microcontrôleur PIC18F45K22**
 
    ![pic18f](https://github.com/user-attachments/assets/f27b1d27-621b-4148-b83b-737ff575455a)
       

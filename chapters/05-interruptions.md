@@ -1,9 +1,9 @@
 # **5. Gestion des Interruptions**
 Une interruption est un événement qui provoque l'**arrêt immédiat du programme principal** pour exécuter une fonction spécifique appelée **ISR** (Interrupt Service Routine). Une fois le traitement terminé, le microcontrôleur reprend l'exécution du programme principal exactement là où il s'était arrêté.
 
-- ### Types des Interruptions (Sources)
+- ## Types des Interruptions (Sources)
 
-   - #### **Interruptions Externes**
+   - ### **Interruptions Externes**
 
       | Source | Broche  | Description                         |
       | ------ | ------- | ----------------------------------- |
@@ -13,7 +13,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       | RBIF   | `RB4` à `RB7` | Changement d’état des broches PORTB |
 
 
-   - #### **Interruptions Internes**
+   - ### **Interruptions Internes**
 
       <table>
         <thead>
@@ -85,9 +85,9 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       </table>
 
 
-- ###  Mécanisme de Contrôle
+- ##  Mécanisme de Contrôle
 
-   - #### Registres de Contrôle
+   - ### Registres de Contrôle
       | **Catégorie** | **Registres** | **Fonction** | **Description** |
       |-------------|--------------|--------------|--------------------------------|
       | **[Contrôle Global](#registres-de-contrôle-global)** | `INTCON`, `INTCON2`, `INTCON3` | Interruptions de Base et Contrôle Global | **Bits GIE/PEIE :** <br>`0` = Interruptions désactivées <br>`1` = Interruptions activées<br><br>**Bits IE :** <br>`0` = Source désactivée <br>`1` = Source activée<br><br>**Bits IF :** <br>`0` = Pas d'événement <br>`1` = Événement détecté |
@@ -103,7 +103,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       > - **RCON** = **R**eset **CON**trol
 
 
-   - #### Contrôle Global (Bits Système)  
+   - ### Contrôle Global (Bits Système)  
       | Bit | Registre | Nom | Fonction | Description |
       |-----|----------|-----|----------|-------------|
       | **IPEN** | `RCON<7>` | Interrupt Priority Enable | Définit l'architecture d'interruption | `0` = Mode priorité unique<br>`1` = Mode deux priorités |
@@ -116,7 +116,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       >    - → **`GIE = 1`** ET **`PEIE = 1`** Obligatoires
 
 
-   - #### Contrôle par Source (Bits Spécifiques)  
+   - ### Contrôle par Source (Bits Spécifiques)  
       | Bit | Symbole | Localisation | Fonction | Description |
       |-----|---------|--------------|----------|-------------|
       | **IE** | `PIE1<bit>` | Registres PIE1-PIE5 | Autorise l'interruption pour ce périphérique spécifique | `0` = Source masquée<br>`1` = Source autorisée |
@@ -124,8 +124,8 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       | **IP** | `IPR1<bit>` | Registres IPR1-IPR5 | Définit la priorité (seulement si `IPEN=1`) | `0` = Priorité basse<br>`1` = Priorité haute |
 
 
-- ### Priorité des interruptions
-   - #### Niveaux de Priorité
+- ## Priorité des interruptions
+   - ### Niveaux de Priorité
       | Priorité           | Adresse vecteur | Routine                |
       | ------------------ | --------------- | ---------------------- |
       | **Haute priorité** | `0008h`         | `void interrupt()`     |
@@ -134,16 +134,16 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       >  - La gestion des priorités est assurée par les registres `IPRx`.
       >  - **Exception :** l’interruption `INT0` ne possède pas de bit de priorité → toujours **haute priorité**.
 
-   - #### Modes de Fonctionnement   
+   - ### Modes de Fonctionnement   
       | Bit | IPEN = 0 (Mode Simple) | IPEN = 1 (Mode Priorité) |
       |-----|------------------------|--------------------------|
       | **INTCON<7> :** `(GIE/GIEH)` | `GIE = 1` : Active **Tout**<br>`GIE = 0` : Désactive Tout | `GIEH = 1` : Active **Haute Priorité**<br>`GIEH = 0` : Désactive Tout |
       | **INTCON<6> :** `(PEIE/GIEL)` | `PEIE = 1` : Active **Périphériques**<br>`PEIE = 0` : Désactive Périphériques | `GIEL = 1` : Active **Basse Priorité**<br>`GIEL = 0` : Désactive Basse Priorité |
 
 
-- ### Registres de Gestion d'Interruption
+- ## Registres de Gestion d'Interruption
 
-   - #### **Registres de Contrôle Global**
+   - ### **Registres de Contrôle Global**
    
       - **INTCON - Contrôle Interruptions de Base**
       
@@ -168,7 +168,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          | **INT2IP** | **INT1IP** | — | **INT2IE** | **INT1IE** | — | **INT2IF** | **INT1IF** |
    
    
-   - #### **Registres de Priorité (IPR1 à IPR5)**
+   - ### **Registres de Priorité (IPR1 à IPR5)**
    
       - **IPR1 - Priorités Périphériques (Groupe 1)**
       
@@ -203,7 +203,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       > **Valeurs IP bits :** `0` = Basse priorité, `1` = Haute priorité (si IPEN=1)
    
    
-   - #### **Registres d'Activation (PIE1 à PIE5)**
+   - ### **Registres d'Activation (PIE1 à PIE5)**
    
       - **PIE1 - Activation Périphériques (Groupe 1)**
       
@@ -223,7 +223,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       > **Valeurs IE bits :** `0` = Désactivé, `1` = Activé
    
    
-   - #### **Registres de Flags (PIR1 à PIR5)**
+   - ### **Registres de Flags (PIR1 à PIR5)**
    
       - **PIR1 - Flags Périphériques (Groupe 1)**
       
@@ -236,7 +236,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       > **Valeurs IF bits :** `0` = Pas d'événement, `1` = Événement détecté (à effacer manuellement)
       
    
-   - #### **Registres de Configuration**
+   - ### **Registres de Configuration**
    
       - **ANSELB - Configuration Analogique/Digital**
       

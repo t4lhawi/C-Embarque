@@ -3,7 +3,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
 > Cette Fonction est Gérée par les Périphériques **Capture/Compare/PWM (CCP)**.
 
 
-- ### Caractéristiques du PWM
+- ## Caractéristiques du PWM
    | **Caractéristique**     | **Description**                                                                           |
    | ----------------------- | ----------------------------------------------------------------------------------------- |
    | **Modules disponibles** | **5 modules PWM** :<br>• **3 modules ECCP** (Enhanced)<br>• **2 modules CCP** (standards) |
@@ -19,7 +19,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
 
 
 
-- ### Étapes de Configuration
+- ## Étapes de Configuration
 
    | **Étape** | **Action**                                   | **Description**                                                                  |
    | --------- | -------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -33,9 +33,9 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
 
 
 
-- ### Registres de Contrôle
+- ## Registres de Contrôle
 
-   - #### `CCPxCON` – Registre de Contrôle du Module CCPx Standard (x = 1, 2, 3, 4, 5)
+   - ### `CCPxCON` – Registre de Contrôle du Module CCPx Standard (x = 1, 2, 3, 4, 5)
       <table>
          <tr>
             <td colspan="8" align="center"><strong>x = 1, 2, 3</strong></td>
@@ -100,7 +100,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
 
 
 
-   - #### `CONFIG3H` – Configuration PWM et des Entrées/Sorties (CONFIG3H)
+   - ### `CONFIG3H` – Configuration PWM et des Entrées/Sorties (CONFIG3H)
       <table>
         <thead>
           <tr align="center">
@@ -170,7 +170,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
            </table>
 
 
-   - #### `CCPTMRS0` – Registre de Sélection du Timer pour PWM 0
+   - ### `CCPTMRS0` – Registre de Sélection du Timer pour PWM 0
       <table>
         <thead>
           <tr align="center">
@@ -219,7 +219,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
         | 1 | 0 | Timer5 | Timer6 |
         | 1 | 1 | **RÉSERVÉ** | |
 
-   - #### `CCPTMRS1` – Registre de Sélection du Timer pour PWM 1
+   - ### `CCPTMRS1` – Registre de Sélection du Timer pour PWM 1
       <table>
         <thead>
           <tr align="center">
@@ -264,7 +264,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
 
 
 
-- ### Registres Associés
+- ## Registres Associés
    <table>
      <thead>
        <tr align="center">
@@ -321,7 +321,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
    > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
    > - **[Gestion des Timers (`TMRx`, `TxCON`, `PRx`)](#6-gestion-des-timers)**
 
-- ### Fonctionnes Avancé MikroC
+- ## Fonctionnes Avancé MikroC
    | **Fonction**             | **Description**                                  |
    | ------------------------ | ------------------------------------------------ |
    | **`PWM1_Init(freq)`**    | **Initialise** le Module PWM1 à la Fréquence `freq`. |

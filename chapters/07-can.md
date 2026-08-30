@@ -5,7 +5,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
 >   - Références de Tension configurables (**$`V_{DD}`$, $`V_{SS}`$, $`V_{REF±}`$, $`FVR`$**)
 >   - Peut générer une interruption en fin de Conversion
 
-- ### Étapes de Conversion A/N
+- ## Étapes de Conversion A/N
 
    | Étape | Action | Description |
    |-------|--------|-------------|
@@ -22,9 +22,9 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
   > - **Exécution (Étapes 4-7) :** Lancement et lecture de la conversion
   > - **Nettoyage (Étapes 8) :** Gestion des interruptions
 
-- ### Registres de Contrôle
+- ## Registres de Contrôle
 
-   - #### `ADCONO` - Sélection de Canal et Activation ADC
+   - ### `ADCONO` - Sélection de Canal et Activation ADC
       <table>
         <thead>
           <tr align="center">
@@ -96,7 +96,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
         - **`0`** = **ADC désactivé** – Économie d'énergie
    
    
-   - #### `ADCON1` - Configuration des Références de Tension
+   - ### `ADCON1` - Configuration des Références de Tension
       <table>
         <thead>
           <tr align="center">
@@ -143,7 +143,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
         | 1 | 1 | **RÉSERVÉ** (par défaut = VSS) |
    
    
-   - #### `ADCON2` - Configuration de l'Horloge et du Format
+   - ### `ADCON2` - Configuration de l'Horloge et du Format
       <table>
         <thead>
           <tr align="center">
@@ -260,7 +260,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
 
 
 
-   - #### `FVRCON` - Contrôle de la Référence de Tension Fixe
+   - ### `FVRCON` - Contrôle de la Référence de Tension Fixe
       <table>
         <thead>
           <tr align="center">
@@ -309,7 +309,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
         > - **1,024 V** : Pour CAN (ADC) basse tension
         > - **2,048 V / 4,096 V** : Pour comparateurs analogiques ou CAN haute précision
 
-- ### Registres Associés
+- ## Registres Associés
    <table>
      <thead>
        <tr>
@@ -367,7 +367,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
 
 
 
-- ### Fonctionnes Avancé MikroC
+- ## Fonctionnes Avancé MikroC
    | **Fonction**                  | **Description**                                |
    | ----------------------------- | ---------------------------------------------- |
    | **`ADC_Init()`**              | **Initialise** le Module CAN.                      |

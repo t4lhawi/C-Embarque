@@ -1,7 +1,7 @@
 # **6. Gestion des Timers**
 Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou **un compteur** indépendant du processeur. Il permet d'exécuter des tâches répétitives avec une précision temporelle parfaite sans bloquer le programme principal.
 
-- ### Caractéristiques des Timers
+- ## Caractéristiques des Timers
 
    | Caractéristique | Timer 0 | Timer 1/3/5 | Timer 2/4/6 |
    |-----------------|--------|------------|------------|
@@ -21,8 +21,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    >    - **Post-diviseur `1:10` :** Interruption Tous les 10 Overflows
 
 
-- ### Timer 0 (TMR0)
-   - #### Registre de Contrôle – `T0CON`
+- ## Timer 0 (TMR0)
+   - ### Registre de Contrôle – `T0CON`
       <table>
         <thead>
           <tr align="center">
@@ -81,14 +81,14 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 1 | 1 | 0 | 1:128 |
          | 1 | 1 | 1 | 1:256 |
 
-   - #### Mode Fonctionnement
+   - ### Mode Fonctionnement
 
       | Champ / Bit                 | **Mode Timer** (`T0CS = 0`)                      | **Mode Compteur** (`T0CS = 1`)                                            |
       | --------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------- |
       | **T0CON<5> :** `T0CS`       | **`0`** : Source **Interne** (**Fosc/4**)        | **`1`** : Source **Externe** (Broche **RA4 / T0CKI**)                     |
       | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                          | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front Descendant** |
 
-   - #### Registres Associés
+   - ### Registres Associés
 
       <table>
         <thead>
@@ -152,8 +152,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       >    - Seul `TMR0L` est **Utilisé**
 
 
-   - #### Période de Débordement $`T_0`$ (Overflow)
-      - ##### En Mode Timer (`T0CS = 0`)
+   - ### Période de Débordement $`T_0`$ (Overflow)
+      - #### En Mode Timer (`T0CS = 0`)
  
          |        Étapes                            |             En Mode Timer (`T0CS = 0`)                                             |
          | ---------------------------------------- | :--------------------------------------------------------------------------------: |
@@ -167,7 +167,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          > - **Vérifie :** **$`T_{inc}​ < 256`$** (Mode `8-bit`) ou **$`< 65536`$** (Mode `16-bit`)
          > - **Optimise :** Choisis le Pré-diviseur qui donne un Nombre d’Itérations Proche d'un Entier
          
-      - ##### En Mode Compteur (`T0CS = 1`)
+      - #### En Mode Compteur (`T0CS = 1`)
 
          |        Étapes                               |             En Mode Compteur (`T0CS = 1`)                                                 |
          | ------------------------------------------- | :---------------------------------------------------------------------------------------: |
@@ -374,8 +374,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
  -->
 
    
-- ### Timer 2/4/6 (TMR2/4/6)
-   - #### Registre de Contrôle – `TxCON` (x = 2, 4, 6)
+- ## Timer 2/4/6 (TMR2/4/6)
+   - ### Registre de Contrôle – `TxCON` (x = 2, 4, 6)
       <table>
         <thead>
           <tr align="center">
@@ -430,7 +430,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 0 | 1 | **1:4** |
          | 1 | x | **1:16** |
 
-   - #### Période de Timer `PRx`
+   - ### Période de Timer `PRx`
  
       | Étapes                                       | En Mode Timer (`TMRxON = 1`)                                                    |
       |----------------------------------------------|:-------------------------------------------------------------------------------:|
@@ -444,7 +444,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       > - **Période d’un Incrément : $`T_{inc}​ = \text{Prediv} \times T_H`$**
 
 
-   - #### Registres Associés (x = 2, 4, 6)
+   - ### Registres Associés (x = 2, 4, 6)
       <table>
         <thead>
           <tr>
