@@ -1,4 +1,4 @@
-## **8. Gestion de CNA**
+# **8. Gestion de CNA**
 Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numérique** en une **Tension Analogique** proportionnelle, définie par des Tensions de Référence, avec un Nombre Fini de Niveaux (**32** pour un CNA **`5-bits`**).
 
 

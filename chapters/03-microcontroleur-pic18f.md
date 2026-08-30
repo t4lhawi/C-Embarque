@@ -1,4 +1,4 @@
-## **3. Microcontrôleur PIC18F**
+# **3. Microcontrôleur PIC18F**
 Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
 
 

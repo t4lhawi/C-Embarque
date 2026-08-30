@@ -1,4 +1,4 @@
-## **9. Gestion de PWM**
+# **9. Gestion de PWM**
 La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fournir de l'énergie à une charge en basculant rapidement entre les états logiques ‘1’ et ‘0’. 
 > Cette Fonction est Gérée par les Périphériques **Capture/Compare/PWM (CCP)**.
 

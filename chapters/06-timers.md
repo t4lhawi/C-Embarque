@@ -1,4 +1,4 @@
-## **6. Gestion des Timers**
+# **6. Gestion des Timers**
 Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou **un compteur** indépendant du processeur. Il permet d'exécuter des tâches répétitives avec une précision temporelle parfaite sans bloquer le programme principal.
 
 - ### Caractéristiques des Timers

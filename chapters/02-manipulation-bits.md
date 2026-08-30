@@ -1,4 +1,4 @@
-## **2. Manipulation des Bits**
+# **2. Manipulation des Bits**
 
 - ### Représentation Binaire d’un Octet (`char`)
    Un type `char` est codé sur 8 bits, numérotés de b0 à b7.

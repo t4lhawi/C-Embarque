@@ -1,4 +1,4 @@
-## **4. Ports d’Entrée/Sortie (E/S)**
+# **4. Ports d’Entrée/Sortie (E/S)**
 
 - ### Registres de Contrôle
 

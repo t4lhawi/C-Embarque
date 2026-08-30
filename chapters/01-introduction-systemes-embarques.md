@@ -1,4 +1,4 @@
-## **1. Introduction aux Systèmes Embarqués**
+# **1. Introduction aux Systèmes Embarqués**
 
 Un **système embarqué** est un système électronique et informatique intégré dans un dispositif plus large, dédié à une tâche précise.
 Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **capteurs** et **actionneurs**.

@@ -6,7 +6,7 @@
    - **[Cycle de Développement](#cycle-de-développement)**
    - **[Domaines d’Application](#domaines-dapplication)**
 
-- ## **[Manipulation des Bits](#2-manipulation-des-bits)**
+- ## **[Manipulation des Bits](chapters/02-manipulation-bits.md)**
    - **[Représentation Binaire d’un Octet](#représentation-binaire-dun-octet-char)**
    - **[Opérations Bit à Bit (Bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations Courantes sur un Bit Précis](#opérations-courantes-sur-un-bit-précis)**
@@ -14,11 +14,11 @@
    - **[Rotation des Bits](#rotations-de-bits)**
    - **[Masques de Bits (Bit masks)](#masques-de-bits-bit-masks)**
 
-- ## **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
+- ## **[Microcontrôleur PIC18F](chapters/03-microcontroleur-pic18f.md)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 
-- ## **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
+- ## **[Ports d’Entrée/Sortie (E/S)](chapters/04-ports-entree-sortie.md)**
    - **[Registres de Contrôle](#registres-de-contrôle)**
    - **[Registres Associés au PORTA](#registres-associés-au-porta)**
    - **[Registres Associés au PORTB](#registres-associés-au-portb)**
@@ -26,30 +26,30 @@
    - **[Registres Associés au PORTD](#registres-associés-au-portd)**
    - **[Registres Associés au PORTE](#registres-associés-au-porte)**
 
-- ## **[Gestion des Interruptions](#5-gestion-des-interruptions)**
+- ## **[Gestion des Interruptions](chapters/05-interruptions.md)**
    - **[Types des Interruptions](#types-des-interruptions-sources)**
    - **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
    - **[Priorité des Interruptions](#priorité-des-interruptions)**
    - **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
 
-- ## **[Gestion des Timers](#6-gestion-des-timers)**
+- ## **[Gestion des Timers](chapters/06-timers.md)**
    - **[Caractéristiques des Timers](#caractéristiques-des-timers)**
    - **[Timer 0 (TMR0)](#timer-0-tmr0)**
    - **[Timers 1, 3 et 5 (TMR1/3/5)](#timer-135-tmr135)**
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#timer-246-tmr246)**
 
-- ## **[Gestion de CAN](#7-gestion-de-can)**
+- ## **[Gestion de CAN](chapters/07-can.md)**
    - **[Étapes de Conversion](#étapes-de-conversion-an)**
    - **[Registres de Contrôle](#registres-de-contrôle-2)**
    - **[Registres Associés](#registres-associés)**
    - **[Fonctionnes Avancé *MikroC*](#fonctionnes-avancé-mikroc)**
 
-- ## **[Gestion de CNA](#8-gestion-de-cna)**
+- ## **[Gestion de CNA](chapters/08-cna.md)**
    - **[Étapes de Conversion](#étapes-de-conversion-na)**
    - **[Registres de Contrôle](#registres-de-contrôle-3)**
    - **[Registres Associés](#registres-associés-1)**
 
-- ## **[Gestion de PWM](#9-gestion-de-pwm)**
+- ## **[Gestion de PWM](chapters/09-pwm.md)**
    - **[Caractéristiques du PWM](#caractéristiques-du-pwm)**
    - **[Étapes de Configuration](#étapes-de-configuration)**
    - **[Registres de Contrôle](#registres-de-contrôle-4)**

@@ -1,4 +1,4 @@
-## **7. Gestion de CAN**
+# **7. Gestion de CAN**
 Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signal Analogique** en une **Valeur Numérique sur 10 bits** (0 à 1023).
 >   - Entrées Analogiques multiplexées **(`AN0` à `AN27`)**
 >   - Résultat Stocké dans **`ADRESH:ADRESL`**

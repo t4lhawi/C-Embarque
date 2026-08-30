@@ -1,4 +1,4 @@
-## **5. Gestion des Interruptions**
+# **5. Gestion des Interruptions**
 Une interruption est un événement qui provoque l'**arrêt immédiat du programme principal** pour exécuter une fonction spécifique appelée **ISR** (Interrupt Service Routine). Une fois le traitement terminé, le microcontrôleur reprend l'exécution du programme principal exactement là où il s'était arrêté.
 
 - ### Types des Interruptions (Sources)
