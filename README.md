@@ -57,18 +57,8 @@
    - **[Fonctionnes Avancé *MikroC*](chapters/09-pwm.md#fonctionnes-avancé-mikroc-1)**
 
 
----
+- ## Ressources
+   - **[Data Sheet — PIC18(L)F2X/4XK22](https://ww1.microchip.com/downloads/jp/DeviceDoc/jp547043.pdf)**
+   - **[Programmation en C](https://github.com/mohamedtalhaouii/Programmation-C)**
+   - **[Programmation en C++](https://github.com/mohamedtalhaouii/Programmation-Cpp)**
 
-<h3 align="center"><a href="https://ww1.microchip.com/downloads/jp/DeviceDoc/jp547043.pdf" target="_blank">Data Sheet - PIC18(L)F2X/4XK22</a></h3>
-
----
-
-<h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Programmation en C</a></h3>
-
----
-
-<h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-Cpp" target="_blank">Programmation en C++</a></h3>
-
----
-
-<h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/t4lhawi" target="_blank">Mohamed Talhaoui</a></h3>
