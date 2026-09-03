@@ -59,6 +59,6 @@
 
 - ## Ressources
    - **[Data Sheet — PIC18(L)F2X/4XK22](https://ww1.microchip.com/downloads/jp/DeviceDoc/jp547043.pdf)**
-   - **[Programmation en C](https://github.com/mohamedtalhaouii/Programmation-C)**
-   - **[Programmation en C++](https://github.com/mohamedtalhaouii/Programmation-Cpp)**
+   - **[Programmation en C](https://github.com/t4lhawi/Programmation-C)**
+   - **[Programmation en C++](https://github.com/t4lhawi/Programmation-Cpp)**
 
